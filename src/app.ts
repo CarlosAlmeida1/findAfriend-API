@@ -14,7 +14,7 @@ app.setErrorHandler((error, _, reply) => {
   if (env.NODE_ENV != "production") {
     console.error(error);
   } else {
-    // TODO ferramenta para observar os erros Datalog/NewRElic/Sentry
+    console.error(error.message);
   }
 
   return reply.status(500).send({ message: "Internal Server Error" });
